@@ -32,26 +32,19 @@ cargo build --release -p valen-lsp
 ### lazy.nvim
 
 ```lua
-{
-  "NaruseNia/valen.nvim",
-  ft = "valen",
-  opts = {},
-}
+-- Zero config: LSP starts automatically when valen-lsp is in PATH
+{ "NaruseNia/valen.nvim" }
 ```
 
 ### packer.nvim
 
 ```lua
-use {
-  "NaruseNia/valen.nvim",
-  ft = "valen",
-  config = function()
-    require("valen").setup()
-  end,
-}
+use "NaruseNia/valen.nvim"
 ```
 
 ## Configuration
+
+LSP は `valen-lsp` が PATH にあれば `.vln` ファイルを開いた時に自動起動します。カスタマイズしたい場合:
 
 ```lua
 require("valen").setup({
